@@ -257,11 +257,16 @@ const DEFAULT_FOOTER = {
   columns: [
     { title: "Services", links: [{ label: "Web Development" }, { label: "Mobile Apps" }, { label: "Cloud & DevOps" }, { label: "UI/UX Design" }, { label: "Cybersecurity" }, { label: "Custom Software" }] },
     { title: "Platforms", links: [{ label: "Web & SaaS" }, { label: "iOS & Android" }, { label: "AWS & Docker" }, { label: "AI & Machine Learning" }] },
-    { title: "Resources", links: [{ label: "Tech Blog" }, { label: "Case Studies" }, { label: "Engineering Whitepapers" }] },
-    { title: "Company", links: [{ label: "About Us" }, { label: "Contact Us" }, { label: "Privacy Policy" }, { label: "Terms of Service" }] },
+    { title: "Contact", links: [
+      { label: "+91 93425 53805", href: "tel:9342553805" },
+      { label: "surxtech@gmail.com", href: "mailto:surxtech@gmail.com" },
+      { label: "Nilakottai, Dindigul", href: "#contact" },
+      { label: "Start a Project", href: "#contact" },
+    ] },
+    { title: "Company", links: [{ label: "About Us" }, { label: "Privacy Policy" }, { label: "Terms of Service" }] },
   ],
   social: [{ label: "LinkedIn" }, { label: "GitHub" }, { label: "Twitter / X" }],
-  note: "surxtech - Transforming businesses through custom digital solutions, modern web platforms, and mobile apps.",
+  note: "surxtech · Nilakottai, Dindigul · Call: +91 93425 53805 · surxtech@gmail.com",
 }
 
 const PALETTES = {
@@ -1563,6 +1568,30 @@ function ContactSheet({
               <p>Ready to build or scale your digital solution? Tell us about your goals and our team will get in touch with a custom proposal.</p>
             </div>
 
+            <div style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "8px 14px",
+              padding: "10px 14px",
+              borderRadius: 14,
+              background: "var(--fpt-card)",
+              border: "1px solid var(--fpt-line)",
+              fontSize: 12,
+              alignItems: "center"
+            }}>
+              <a href="tel:9342553805" style={{ display: "inline-flex", alignItems: "center", gap: 5, color: "var(--fpt-ink)", textDecoration: "none", fontWeight: 600 }}>
+                <Icon name="phone" size={13} /> +91 93425 53805
+              </a>
+              <span style={{ color: "var(--fpt-line)" }}>•</span>
+              <a href="mailto:surxtech@gmail.com" style={{ display: "inline-flex", alignItems: "center", gap: 5, color: "var(--fpt-ink)", textDecoration: "none", fontWeight: 600 }}>
+                surxtech@gmail.com
+              </a>
+              <span style={{ color: "var(--fpt-line)" }}>•</span>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: 5, color: "var(--fpt-muted)" }}>
+                Nilakottai, Dindigul
+              </span>
+            </div>
+
             <form onSubmit={handleSubmit} style={{ display: "grid", gap: 14 }}>
               <div className="fpt-contact-grid">
                 <div className="fpt-contact-field">
@@ -2321,7 +2350,30 @@ export default function FuelplateRecipesTemplate({
             })}
             <h2 className="fpt-h2 fpt-wrap" id={uid + "cta"} style={{ position: "relative" }}><Words text={cta.title} /></h2>
             <p className="fpt-lede" style={{ position: "relative" }}>{cta.text}</p>
-            <button className="fpt-btn fpt-btn-accent" style={{ position: "relative" }} onClick={openDownload}>
+            <div style={{
+              position: "relative",
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "12px 20px",
+              margin: "12px 0 24px",
+              fontSize: 14,
+              color: "var(--fpt-ink)",
+            }}>
+              <a href="tel:9342553805" style={{ display: "inline-flex", alignItems: "center", gap: 6, color: "var(--fpt-ink)", textDecoration: "none", fontWeight: 600 }}>
+                <Icon name="phone" size={15} /> +91 93425 53805
+              </a>
+              <span style={{ opacity: 0.3 }}>•</span>
+              <a href="mailto:surxtech@gmail.com" style={{ display: "inline-flex", alignItems: "center", gap: 6, color: "var(--fpt-ink)", textDecoration: "none", fontWeight: 600 }}>
+                surxtech@gmail.com
+              </a>
+              <span style={{ opacity: 0.3 }}>•</span>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: 6, color: "var(--fpt-muted)" }}>
+                Nilakottai, Dindigul
+              </span>
+            </div>
+            <button className="fpt-btn fpt-btn-accent" style={{ position: "relative" }} onClick={openContact}>
               <span className="fpt-dot" style={{ background: pal.soft }} /> {cta.button}
             </button>
           </section>
