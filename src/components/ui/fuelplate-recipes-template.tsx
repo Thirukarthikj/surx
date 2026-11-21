@@ -175,10 +175,10 @@ const DEFAULT_RECIPE: FptRecipe = {
     { name: "Tailwind & Design System", qty: 1, unit: "theme" },
   ],
   steps: [
-    { title: "Discovery & Planning", text: "Analyze business requirements, core user journeys, and architectural roadmap.", minutes: 3 },
-    { title: "UI/UX System Design", text: "Develop interactive wireframes, component design systems, and responsive prototypes.", minutes: 5 },
-    { title: "Full-Stack Development", text: "Implement frontend interfaces, backend microservices, and secure API endpoints with CI/CD.", minutes: 10 },
-    { title: "Automated QA & Security", text: "Run comprehensive regression tests, penetration testing, and performance load audits.", minutes: 5 },
+    { title: "Discovery & Planning", text: "Analyze business requirements, core user journeys, and architectural roadmap." },
+    { title: "UI/UX System Design", text: "Develop interactive wireframes, component design systems, and responsive prototypes." },
+    { title: "Full-Stack Development", text: "Implement frontend interfaces, backend microservices, and secure API endpoints with CI/CD." },
+    { title: "Automated QA & Security", text: "Run comprehensive regression tests, penetration testing, and performance load audits." },
     { title: "Production Deployment", text: "Deploy to scalable cloud infrastructure with automated monitoring, SSL, and 99.9% uptime." },
   ],
 }
@@ -1187,31 +1187,6 @@ function PlannerPhone({ tab, dishes, target, brand }: { tab: number; dishes: Fpt
 
 function CookPhone({ recipe }: { recipe: FptRecipe }) {
   const [step, setStep] = React.useState(0)
-  const [left, setLeft] = React.useState(-1)
-  const [running, setRunning] = React.useState(false)
-  const s = recipe.steps[step]
-  const total = s && s.minutes ? s.minutes * 60 : 0
-
-  React.useEffect(() => {
-    setRunning(false)
-    setLeft(-1)
-  }, [step])
-
-  React.useEffect(() => {
-    if (!running) return
-    const t = setInterval(() => {
-      setLeft((l) => {
-        if (l <= 1) {
-          setRunning(false)
-          return 0
-        }
-        return l - 1
-      })
-    }, 1000)
-    return () => clearInterval(t)
-  }, [running])
-
-  const shown = left < 0 ? total : left
   const listRef = React.useRef(null as HTMLDivElement | null)
   React.useEffect(() => {
     const el = listRef.current && (listRef.current.querySelector('[aria-current="step"]') as HTMLElement | null)
@@ -1227,7 +1202,7 @@ function CookPhone({ recipe }: { recipe: FptRecipe }) {
           <div className="fpt-sub" style={{ textAlign: "center" }}>Agile Delivery Roadmap</div>
           <h4 style={{ fontSize: 14 }}>{recipe.name}</h4>
           <Bar value={step + 1} max={recipe.steps.length} />
-          <div ref={listRef} className="fpt-step-list" style={{ maxHeight: 238, overflowY: "auto", scrollbarWidth: "none" }}>
+          <div ref={listRef} className="fpt-step-list" style={{ maxHeight: 290, overflowY: "auto", scrollbarWidth: "none" }}>
             {recipe.steps.map((st, i) => (
               <button key={i} className="fpt-step" aria-current={i === step ? "step" : undefined} data-done={i < step} onClick={() => setStep(i)}>
                 <i>{i < step ? <Icon name="check" size={10} /> : i + 1}</i>
@@ -1238,29 +1213,6 @@ function CookPhone({ recipe }: { recipe: FptRecipe }) {
               </button>
             ))}
           </div>
-          {total > 0 ? (
-            <div className="fpt-timer" role="timer" aria-live={running ? "off" : "polite"}>
-              <span style={{ display: "grid" }}>
-                <small style={{ fontSize: 9.5, opacity: 0.8 }}>{left === 0 ? "Done!" : "Step timer"}</small>
-                <b>{mmss(shown)}</b>
-              </span>
-              <button onClick={() => {
-                if (left === 0) {
-                  setLeft(-1)
-                  setRunning(false)
-                } else {
-                  if (left < 0) setLeft(total)
-                  setRunning((r) => !r)
-                }
-              }}>
-                {left === 0 ? "Reset" : running ? "Pause" : left > 0 && left < total ? "Resume" : "Start"}
-              </button>
-            </div>
-          ) : (
-            <div className="fpt-timer" style={{ background: "var(--fpt-surface)", color: "var(--fpt-ink)" }}>
-              <span style={{ fontSize: 11 }}>No timer for this step</span>
-            </div>
-          )}
           <div className="fpt-stepnav">
             <button onClick={() => setStep((x) => Math.max(0, x - 1))} disabled={step === 0}>Back</button>
             <button onClick={() => setStep((x) => (x + 1) % recipe.steps.length)}>{step === recipe.steps.length - 1 ? "Start over" : "Next step"}</button>
@@ -2259,7 +2211,7 @@ export default function FuelplateRecipesTemplate({
             <div className="fpt-cook">
               <div className="fpt-tile fpt-cook-phone">
                 <CookPhone recipe={recipe} />
-                <p className="fpt-tile-t" style={{ justifySelf: "start" }}><b>Agile Delivery Workflow.</b> Step-by-step engineering roadmap with milestone sprint timers to keep project execution strictly on track.</p>
+                <p className="fpt-tile-t" style={{ justifySelf: "start" }}><b>Agile Delivery Workflow.</b> Step-by-step engineering roadmap and sprint milestones to keep project execution strictly on track.</p>
               </div>
               <div className="fpt-tile fpt-recipe">
                 <Pic shot={recipe.image} w={184} h={184} />
