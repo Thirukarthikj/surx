@@ -150,13 +150,9 @@ const DEFAULT_DISHES: FptDish[] = [
   { id: "webapp", name: "Business Applications", image: { src: "/business-application.jpg", alt: "Business Applications - Enterprise Web Apps & SaaS Platforms", tone: "#f97316" }, time: 30, kcal: 99, protein: 100, carbs: 96, fat: 99, course: "Enterprise Cloud", tags: ["web", "custom", "scalable", "secure"] },
   { id: "ecommerce", name: "E-Commerce Website", image: { src: "/ecommerce-website.jpg", alt: "E-Commerce Website - High-Converting Digital Stores", tone: "#f97316" }, time: 14, kcal: 99, protein: 96, carbs: 94, fat: 98, course: "Digital Commerce", tags: ["web", "custom", "payments", "high-conversion"] },
   { id: "custom", name: "CRM & ERP Systems", image: { src: "/crm-systems.jpg", alt: "CRM & ERP Systems - Centralized Customer & Workflow Engine", tone: "#f97316" }, time: 28, kcal: 99, protein: 100, carbs: 98, fat: 100, course: "Workflow Systems", tags: ["custom", "cloud", "tailored", "microservices"] },
-  { id: "uiux", name: "UI/UX Product Design", image: shot("1581291518857-4e27b48ff24e", "User interface wireframes, prototyping and design system", "#4f46e5"), time: 10, kcal: 100, protein: 95, carbs: 98, fat: 92, course: "Design Systems", tags: ["web", "mobile", "figma", "user-research"] },
-  { id: "cloud", name: "Cloud Solutions & DevOps", image: shot("1451187580459-43490279c0fa", "Global connected cloud network infrastructure and servers", "#0f172a"), time: 7, kcal: 99, protein: 99, carbs: 99, fat: 99, course: "Infrastructure", tags: ["cloud", "aws", "docker", "ci-cd-pipelines"] },
-  { id: "ai", name: "AI & Machine Learning", image: shot("1677442136019-21780ecad995", "Artificial intelligence neural networks and intelligent automation", "#7c3aed"), time: 21, kcal: 98, protein: 99, carbs: 97, fat: 95, course: "Intelligent Systems", tags: ["cloud", "custom", "automation", "predictive-ai"] },
-  { id: "cyber", name: "Cybersecurity & Protection", image: shot("1563986768609-322da13575f3", "Data security encryption and infrastructure protection", "#064e3b"), time: 7, kcal: 99, protein: 100, carbs: 100, fat: 100, course: "Security & Audits", tags: ["cloud", "custom", "penetration-testing", "compliance"] },
-  { id: "api", name: "API & Backend Architecture", image: shot("1544197150-b99a580bb7a8", "High throughput server database and API architecture", "#334155"), time: 14, kcal: 99, protein: 98, carbs: 99, fat: 97, course: "Backend Systems", tags: ["cloud", "web", "graphql-rest", "high-concurrency"] },
-  { id: "digital", name: "Digital Transformation", image: shot("1460925895917-afdab827c52f", "Digital workflow automation and modernization strategy", "#0369a1"), time: 30, kcal: 99, protein: 95, carbs: 96, fat: 95, course: "Transformation", tags: ["custom", "modernization", "workflow-automation"] },
-  { id: "qa", name: "Quality Assurance & Testing", image: shot("1516321318423-f06f85e504b3", "Automated regression testing, performance and load audits", "#374151"), time: 7, kcal: 100, protein: 98, carbs: 95, fat: 97, course: "Testing & Audits", tags: ["web", "mobile", "automated-tests", "load-testing"] },
+  { id: "uiux", name: "UI/UX Product Design", image: { src: "/ui-ux-design.jpg", alt: "UI/UX Product Design - Intuitive Interfaces & Seamless Experiences", tone: "#f97316" }, time: 10, kcal: 100, protein: 95, carbs: 98, fat: 92, course: "Design Systems", tags: ["design", "figma", "mobile", "user-research"] },
+  { id: "cloud", name: "Cloud Solutions & DevOps", image: { src: "/cloud-devops.jpg", alt: "Cloud Solutions & DevOps - Scalable Infrastructure & 99.99% Uptime", tone: "#f97316" }, time: 7, kcal: 99, protein: 99, carbs: 99, fat: 99, course: "Infrastructure", tags: ["cloud", "aws", "docker", "ci-cd-pipelines"] },
+  { id: "ai", name: "AI & Machine Learning", image: { src: "/ai-machine-learning.jpg", alt: "AI & Machine Learning - Intelligent Automation & Neural Systems", tone: "#f97316" }, time: 21, kcal: 98, protein: 99, carbs: 97, fat: 95, course: "Intelligent Systems", tags: ["ai", "automation", "custom", "neural-networks"] },
 ]
 
 const DEFAULT_TESTIMONIALS: FptTestimonial[] = [
@@ -193,10 +189,9 @@ const DEFAULT_CATEGORIES: FptCategory[] = [
   { name: "Business Applications", count: 24, image: { src: "/business-application.jpg", alt: "Business Applications", tone: "#f97316" } },
   { name: "E-Commerce Stores", count: 26, image: { src: "/ecommerce-website.jpg", alt: "E-Commerce Stores", tone: "#f97316" } },
   { name: "CRM & ERP Systems", count: 31, image: { src: "/crm-systems.jpg", alt: "CRM & ERP Systems", tone: "#f97316" } },
-  { name: "Cloud & DevOps", count: 29, image: shot("1451187580459-43490279c0fa", "Cloud Infrastructure", "#0f172a") },
-  { name: "UI/UX Design", count: 42, image: shot("1581291518857-4e27b48ff24e", "UI/UX Design", "#4f46e5") },
-  { name: "Cybersecurity", count: 18, image: shot("1563986768609-322da13575f3", "Cybersecurity", "#064e3b") },
-  { name: "API & Backend", count: 37, image: shot("1544197150-b99a580bb7a8", "API & Database", "#334155") },
+  { name: "UI/UX Product Design", count: 42, image: { src: "/ui-ux-design.jpg", alt: "UI/UX Design", tone: "#f97316" } },
+  { name: "Cloud & DevOps", count: 29, image: { src: "/cloud-devops.jpg", alt: "Cloud Infrastructure", tone: "#f97316" } },
+  { name: "AI & Machine Learning", count: 31, image: { src: "/ai-machine-learning.jpg", alt: "Artificial Intelligence", tone: "#f97316" } },
 ]
 
 const DEFAULT_ARTICLES: FptArticle[] = [
@@ -240,10 +235,10 @@ const DEFAULT_NUTRIENTS = [
 const DEFAULT_PLAN = [
   { day: "Mon", training: "Sprint Planning & Scoping", meals: ["webdev", "appdev", "webapp"] },
   { day: "Tue", training: "UI/UX & Interactive Design", meals: ["uiux", "webdev", "custom"] },
-  { day: "Wed", training: "Backend API & Database Setup", meals: ["api", "cloud", "webapp"] },
+  { day: "Wed", training: "Backend API & Database Setup", meals: ["cloud", "webapp", "ai"] },
   { day: "Thu", training: "Core Feature Development", meals: ["webdev", "appdev", "ecommerce"] },
-  { day: "Fri", training: "Security Audit & Code Review", meals: ["cyber", "qa", "cloud"] },
-  { day: "Sat", training: "CI/CD Pipeline & Staging", meals: ["cloud", "custom", "api"] },
+  { day: "Fri", training: "Security Audit & Code Review", meals: ["cloud", "custom", "uiux"] },
+  { day: "Sat", training: "CI/CD Pipeline & Staging", meals: ["cloud", "custom", "ecommerce"] },
   { day: "Sun", training: "Production Deployment & Uptime", meals: ["webapp", "cloud", "webdev"] },
 ]
 
