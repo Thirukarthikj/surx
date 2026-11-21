@@ -476,7 +476,10 @@ const FPT_CSS = `
 .fpt-nav-links{display:flex;gap:4px}
 .fpt-nav-links a,.fpt-nav-links button{font-size:12.5px;padding:7px 11px;border-radius:999px;opacity:.86;transition:background .2s,opacity .2s}
 .fpt-nav-links a:hover,.fpt-nav-links button:hover{opacity:1;background:color-mix(in srgb,currentColor 12%,transparent)}
-.fpt-logo{display:flex;align-items:center;gap:7px;font-weight:600;font-size:15px;letter-spacing:-.02em}
+.fpt-logo{display:flex;align-items:center;gap:9px;font-weight:600;font-size:16px;letter-spacing:-.02em}
+.fpt-brand-logo{border-radius:4px;transition:transform .2s ease}
+.fpt-logo:hover .fpt-brand-logo{transform:scale(1.06)}
+.fpt-root[data-theme="dark"] .fpt-brand-logo{filter:drop-shadow(0 0 3px rgba(255,255,255,.25))}
 .fpt-nav-end{display:flex;justify-content:flex-end;align-items:center;gap:6px}
 .fpt-iconbtn{position:relative;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;transition:background .2s}
 .fpt-iconbtn:hover{background:color-mix(in srgb,currentColor 12%,transparent)}
@@ -925,13 +928,23 @@ function Icon({ name, size = 16 }: { name: IconName; size?: number }) {
   }
 }
 
-function Logo() {
+function Logo({ size = 26, className }: { size?: number; className?: string }) {
   return (
-    <svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true">
-      <circle cx="16" cy="16" r="14" fill="currentColor" opacity=".14" />
-      <path d="M11 11h9a4 4 0 0 1 0 8h-8a4 4 0 0 0 0 8h9" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="23" cy="19" r="1.5" fill="currentColor" />
-    </svg>
+    <img
+      src="/logo.png"
+      alt="surxtech logo"
+      width={size}
+      height={size}
+      className={"fpt-brand-logo " + (className || "")}
+      style={{
+        width: size,
+        height: size,
+        objectFit: "contain",
+        display: "inline-block",
+        verticalAlign: "middle",
+        flexShrink: 0,
+      }}
+    />
   )
 }
 
@@ -1970,7 +1983,7 @@ export default function FuelplateRecipesTemplate({
             ))}
           </div>
           <a className="fpt-logo" href="#" onClick={(e) => (e.preventDefault(), rootRef.current && rootRef.current.scrollIntoView({ behavior: prefersReduced() ? "auto" : "smooth" }))}>
-            <Logo />
+            <Logo size={28} />
             {brand}
           </a>
           <div className="fpt-nav-end">
@@ -2381,7 +2394,7 @@ export default function FuelplateRecipesTemplate({
         <footer className="fpt-foot">
           <div className="fpt-foot-top">
             <div>
-              <div className="fpt-logo"><Logo /> {brand}</div>
+              <div className="fpt-logo"><Logo size={28} /> {brand}</div>
               <p style={{ fontSize: 12.5, color: "var(--fpt-muted)", marginTop: 6 }}>{tagline}</p>
             </div>
             {footer.columns.map((col) => (
