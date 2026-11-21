@@ -4,14 +4,55 @@ import FuelplateRecipesTemplate from './components/ui/fuelplate-recipes-template
 export default function App() {
   return (
     <div style={{ position: 'relative', width: '100%', minHeight: '100vh' }}>
-      {/* Permanent Crystal Clear Background Styling */}
+      {/* Permanent Crystal Clear Cosmic Background Styling */}
       <style>{`
+        .fpt-hero-frame {
+          background: #05020c !important;
+        }
         .fpt-hero-frame::after {
           display: none !important;
         }
         .fpt-hero-img .fpt-pic img {
-          filter: contrast(1.06) brightness(1.02) !important;
+          filter: contrast(1.08) brightness(1.02) !important;
           image-rendering: -webkit-optimize-contrast !important;
+          object-fit: cover !important;
+        }
+        .fpt-hero-copy {
+          color: #ffffff !important;
+        }
+        .fpt-hero h1 {
+          color: #ffffff !important;
+          text-shadow: 0 4px 24px rgba(0, 0, 0, 0.9), 0 0 40px rgba(139, 92, 246, 0.5) !important;
+        }
+        .fpt-hero p {
+          color: #e2e8f0 !important;
+          text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85) !important;
+        }
+        .fpt-hero-copy .fpt-btn {
+          background: rgba(255, 255, 255, 0.95) !important;
+          color: #0f172a !important;
+          box-shadow: 0 8px 24px -6px rgba(124, 58, 237, 0.5) !important;
+          border: 1px solid rgba(255, 255, 255, 0.8) !important;
+          font-weight: 600 !important;
+        }
+        .fpt-hero-copy .fpt-btn:hover {
+          background: #ffffff !important;
+          transform: translateY(-2px) scale(1.02) !important;
+        }
+        .fpt-plate {
+          background: rgba(15, 23, 42, 0.78) !important;
+          color: #ffffff !important;
+          border: 1px solid rgba(255, 255, 255, 0.15) !important;
+          box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.8), 0 0 30px rgba(139, 92, 246, 0.25) !important;
+        }
+        .fpt-plate b {
+          color: #ffffff !important;
+        }
+        .fpt-plate small {
+          color: #94a3b8 !important;
+        }
+        .fpt-plate-bars {
+          color: #94a3b8 !important;
         }
       `}</style>
 
@@ -44,9 +85,9 @@ export default function App() {
           text: "From bespoke web and mobile apps to scalable cloud engineering, we build modern technology solutions that drive business growth.",
           cta: "Get In Touch",
           image: {
-            src: "/hero.jpg?v=2",
-            alt: "Futuristic high-definition circuit board schematic",
-            tone: "#e5e7eb",
+            src: "/hero.jpg?v=3",
+            alt: "Cosmic glowing purple accretion disk and event horizon",
+            tone: "#0f051d",
             focus: "50% 50%",
           },
         }}
