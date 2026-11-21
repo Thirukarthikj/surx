@@ -2273,40 +2273,162 @@ export default function FuelplateRecipesTemplate({
           </section>
         )}
 
-        {/* resources */}
-        {resources && (
-          <section className="fpt-wrap" data-anchor="resources" style={{ paddingBottom: "clamp(40px,6vw,80px)" }} aria-labelledby={uid + "rs"}>
-            <div className="fpt-res">
-              <div>
-                <h2 className="fpt-h2" id={uid + "rs"} data-fpt-split="" style={{ fontSize: "clamp(30px,4vw,44px)" }}><Words text={resources.title} /></h2>
-                <p className="fpt-lede" style={{ marginTop: 10 }} data-fpt-reveal="">Engineering insights, architectural whitepapers, and conversations with digital leaders building the future.</p>
+        {/* brand manifesto: We Not Just Code, We Build Brands */}
+        <section className="fpt-wrap" data-anchor="brand" style={{ paddingBottom: "clamp(50px,7vw,100px)" }} aria-labelledby={uid + "brand"}>
+          <div style={{
+            position: "relative",
+            overflow: "hidden",
+            borderRadius: 32,
+            background: "linear-gradient(135deg, rgba(30, 18, 56, 0.75) 0%, rgba(15, 10, 30, 0.85) 100%)",
+            border: "1px solid rgba(168, 85, 247, 0.25)",
+            boxShadow: "0 25px 60px -15px rgba(124, 58, 237, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+            backdropFilter: "blur(20px)",
+            WebkitBackdropFilter: "blur(20px)",
+            padding: "clamp(36px, 5vw, 64px)",
+          }}>
+            {/* Ambient background glow */}
+            <div style={{
+              position: "absolute",
+              top: "-20%",
+              right: "-10%",
+              width: "450px",
+              height: "450px",
+              borderRadius: "50%",
+              background: "radial-gradient(circle, rgba(168, 85, 247, 0.22) 0%, transparent 70%)",
+              filter: "blur(40px)",
+              pointerEvents: "none",
+            }} />
+            <div style={{
+              position: "absolute",
+              bottom: "-20%",
+              left: "-10%",
+              width: "380px",
+              height: "380px",
+              borderRadius: "50%",
+              background: "radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, transparent 70%)",
+              filter: "blur(40px)",
+              pointerEvents: "none",
+            }} />
+
+            <div style={{
+              position: "relative",
+              zIndex: 1,
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gap: "clamp(32px, 5vw, 60px)",
+              alignItems: "center",
+            }}>
+              {/* Left Column: Headline and Ethos */}
+              <div style={{ display: "grid", gap: 18 }}>
+                <div style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  padding: "6px 14px",
+                  borderRadius: 999,
+                  background: "rgba(168, 85, 247, 0.15)",
+                  border: "1px solid rgba(168, 85, 247, 0.35)",
+                  color: "#d8b4fe",
+                  fontSize: 12,
+                  fontWeight: 600,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  width: "fit-content",
+                }}>
+                  <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#a855f7", boxShadow: "0 0 8px #a855f7" }} />
+                  Our Core Philosophy
+                </div>
+
+                <h2 id={uid + "brand"} style={{
+                  fontSize: "clamp(32px, 4.2vw, 54px)",
+                  fontWeight: 700,
+                  lineHeight: 1.15,
+                  letterSpacing: "-0.025em",
+                  color: "#ffffff",
+                  margin: 0,
+                }}>
+                  We Not Just Code, <br />
+                  <span style={{
+                    background: "linear-gradient(135deg, #c084fc 0%, #a855f7 50%, #60a5fa 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    textShadow: "0 0 30px rgba(168, 85, 247, 0.4)",
+                  }}>
+                    We Build Brands.
+                  </span>
+                </h2>
+
+                <p style={{
+                  fontSize: "clamp(15px, 1.2vw, 17px)",
+                  lineHeight: 1.65,
+                  color: "rgba(255, 255, 255, 0.75)",
+                  margin: 0,
+                  maxWidth: "520px",
+                }}>
+                  Great technology should never exist in a silo. We fuse enterprise-grade software engineering with iconic visual identity, bespoke design systems, and conversion-focused UX — turning digital platforms into market-dominating brands.
+                </p>
+
+                {/* Quick feature pills */}
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 8 }}>
+                  {["Brand Identity", "Full-Stack Code", "UI/UX Systems", "Market Scalability"].map((tag) => (
+                    <span key={tag} style={{
+                      padding: "6px 12px",
+                      borderRadius: 99,
+                      background: "rgba(255, 255, 255, 0.05)",
+                      border: "1px solid rgba(255, 255, 255, 0.12)",
+                      fontSize: 12,
+                      color: "rgba(255, 255, 255, 0.85)",
+                      fontWeight: 500,
+                    }}>
+                      ✦ {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <div>
-                <div className="fpt-articles" aria-live="polite">
-                  {articles.map((a, i) => (
-                    <a key={kind + a.id} className="fpt-article" href={a.href || "#"} onClick={(e) => !a.href && e.preventDefault()} style={{ animationDelay: i * 0.06 + "s" }}>
-                      <Pic shot={a.image} w={200} h={130} />
-                      <span>
-                        <b>{a.title}</b>
-                        <small>{a.kind} · {fmtDate(a.date)} · {a.read}</small>
-                      </span>
-                      <Icon name="arrow" />
-                    </a>
-                  ))}
-                </div>
-                <div className="fpt-kinds">
-                  {(["Knowledge", "Blog", "Podcasts"] as const).map((k, i) => (
-                    <button key={k} className={"fpt-kind " + ["fpt-sage", "fpt-peach", "fpt-sky"][i]} aria-pressed={kind === k} onClick={() => setKind((x) => (x === k ? "" : k))}>
-                      {k}
-                      <small>{resources.items.filter((a) => a.kind === k).length} {k === "Podcasts" ? "episodes" : "articles"}</small>
-                    </button>
-                  ))}
-                </div>
-                {kind && <button className="fpt-alltab" onClick={() => setKind("")}>Show everything</button>}
+
+              {/* Right Column: 3 Brand Pillars Cards */}
+              <div style={{ display: "grid", gap: 16 }}>
+                {[
+                  {
+                    num: "01",
+                    title: "Brand Identity & Design Systems",
+                    desc: "From typography and cohesive color palettes to 3D graphics and UI guidelines, we engineer an unforgettable visual footprint.",
+                    tag: "Visual Presence"
+                  },
+                  {
+                    num: "02",
+                    title: "High-Performance Engineering",
+                    desc: "Ultra-fast, fault-tolerant web and mobile platforms built with clean architectures that support your brand's explosive growth.",
+                    tag: "Robust Execution"
+                  },
+                  {
+                    num: "03",
+                    title: "Conversion & Brand Growth",
+                    desc: "Every interaction, animation, and customer touchpoint is engineered to foster deep trust and turn visitors into brand advocates.",
+                    tag: "Measurable Impact"
+                  },
+                ].map((card) => (
+                  <div key={card.num} style={{
+                    padding: "20px 24px",
+                    borderRadius: 20,
+                    background: "rgba(255, 255, 255, 0.04)",
+                    border: "1px solid rgba(255, 255, 255, 0.08)",
+                    transition: "all 0.3s ease",
+                    display: "grid",
+                    gap: 6,
+                  }}>
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 4 }}>
+                      <span style={{ fontSize: 13, fontWeight: 700, color: "#a855f7", letterSpacing: "0.05em" }}>{card.num}</span>
+                      <span style={{ fontSize: 10.5, fontWeight: 600, padding: "2px 8px", borderRadius: 99, background: "rgba(168, 85, 247, 0.15)", color: "#c084fc" }}>{card.tag}</span>
+                    </div>
+                    <b style={{ fontSize: 16, fontWeight: 600, color: "#ffffff" }}>{card.title}</b>
+                    <p style={{ fontSize: 13, lineHeight: 1.5, color: "rgba(255, 255, 255, 0.65)", margin: 0 }}>{card.desc}</p>
+                  </div>
+                ))}
               </div>
             </div>
-          </section>
-        )}
+          </div>
+        </section>
 
         {/* call to action */}
         {cta && (
