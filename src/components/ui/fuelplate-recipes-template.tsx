@@ -267,7 +267,7 @@ const DEFAULT_FOOTER = {
 }
 
 const PALETTES = {
-  sage: { accent: "#2f5b3c", soft: "#d6e5c8", ink: "#1b1d18" },
+  sage: { accent: "#7c3aed", soft: "#ede9fe", ink: "#0f172a" },
   clay: { accent: "#9c4528", soft: "#f3d9c8", ink: "#1f1814" },
   ocean: { accent: "#1d4e7a", soft: "#d3e2f3", ink: "#141a22" },
   plum: { accent: "#6a2f5e", soft: "#ecd6e6", ink: "#1e151c" },
@@ -438,8 +438,8 @@ function nextIndex(i: number, key: string, n: number) {
 // #endregion logic
 
 const FPT_CSS = `
-.fpt-root{--fpt-bg:#f3f1eb;--fpt-surface:#ebe8df;--fpt-card:#fbfaf6;--fpt-ink:#1b1d18;--fpt-muted:#6a6c63;--fpt-line:rgba(27,29,24,.1);--fpt-peach:#f8e2d1;--fpt-sage:#e0e9d1;--fpt-sky:#dce6f9;--fpt-shadow:0 1px 2px rgba(27,29,24,.06),0 12px 32px -12px rgba(27,29,24,.18);--fpt-serif:"Instrument Serif","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--fpt-sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;position:relative;min-height:var(--fpt-h);background:var(--fpt-bg);color:var(--fpt-ink);font-family:var(--fpt-sans);font-size:15px;line-height:1.5;overflow-x:clip;-webkit-font-smoothing:antialiased;color-scheme:light}
-.fpt-root[data-theme="dark"]{--fpt-bg:#11130f;--fpt-surface:#191c16;--fpt-card:#1f231c;--fpt-ink:#efede4;--fpt-muted:#a4a698;--fpt-line:rgba(239,237,228,.1);--fpt-peach:#33251c;--fpt-sage:#1f2a1b;--fpt-sky:#1a2334;--fpt-shadow:0 1px 2px rgba(0,0,0,.4),0 18px 40px -16px rgba(0,0,0,.6);color-scheme:dark}
+.fpt-root{--fpt-bg:#f3f1eb;--fpt-surface:#ebe8df;--fpt-card:#fbfaf6;--fpt-ink:#1b1d18;--fpt-muted:#6a6c63;--fpt-line:rgba(27,29,24,.1);--fpt-peach:#f8e2d1;--fpt-sage:#f5f3ff;--fpt-sky:#dce6f9;--fpt-shadow:0 1px 2px rgba(27,29,24,.06),0 12px 32px -12px rgba(27,29,24,.18);--fpt-serif:"Instrument Serif","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--fpt-sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;position:relative;min-height:var(--fpt-h);background:var(--fpt-bg);color:var(--fpt-ink);font-family:var(--fpt-sans);font-size:15px;line-height:1.5;overflow-x:clip;-webkit-font-smoothing:antialiased;color-scheme:light}
+.fpt-root[data-theme="dark"]{--fpt-bg:#11130f;--fpt-surface:#191c16;--fpt-card:#1f231c;--fpt-ink:#efede4;--fpt-muted:#a4a698;--fpt-line:rgba(239,237,228,.1);--fpt-peach:#33251c;--fpt-sage:#26123f;--fpt-sky:#1a2334;--fpt-shadow:0 1px 2px rgba(0,0,0,.4),0 18px 40px -16px rgba(0,0,0,.6);color-scheme:dark}
 .fpt-root *,.fpt-root *::before,.fpt-root *::after{box-sizing:border-box}
 .fpt-root :where(svg,img,canvas){display:block;max-width:none}
 .fpt-root :where(h1,h2,h3,h4,p,ul,ol,figure,blockquote){margin:0;padding:0}
@@ -459,7 +459,8 @@ const FPT_CSS = `
 .fpt-btn{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 18px 0 14px;border-radius:999px;font-size:13px;font-weight:500;white-space:nowrap;transition:transform .25s cubic-bezier(.2,.8,.2,1),background .25s,box-shadow .25s}
 .fpt-btn:hover{transform:translateY(-1px)}
 .fpt-btn:active{transform:translateY(0) scale(.97)}
-.fpt-btn-accent{background:var(--fpt-accent);color:#fff;box-shadow:0 8px 20px -10px var(--fpt-accent)}
+.fpt-btn-accent{background:linear-gradient(135deg, #7c3aed 0%, #9333ea 50%, #a855f7 100%);color:#fff;box-shadow:0 8px 24px -6px rgba(124,58,237,.65),0 0 16px rgba(168,85,247,.35);border:1px solid rgba(255,255,255,.25)}
+.fpt-btn-accent:hover{background:linear-gradient(135deg, #6d28d9 0%, #8b5cf6 50%, #c084fc 100%);box-shadow:0 10px 28px -4px rgba(147,51,234,.8),0 0 22px rgba(192,132,252,.5)}
 .fpt-btn-light{background:#fff;color:#1b1d18}
 .fpt-btn-ghost{background:var(--fpt-card);color:var(--fpt-ink);box-shadow:inset 0 0 0 1px var(--fpt-line)}
 .fpt-dot{width:8px;height:8px;border-radius:50%;background:currentColor;opacity:.9}
@@ -979,7 +980,7 @@ function TechSolutions({ uid }: { uid: string }) {
     <svg width="120" height="90" viewBox="0 0 120 90" aria-hidden="true">
       <defs>
         <linearGradient id={uid + "ts"} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#10b981" />
+          <stop offset="0" stopColor="#8b5cf6" />
           <stop offset="1" stopColor="#3b82f6" />
         </linearGradient>
       </defs>
@@ -988,7 +989,7 @@ function TechSolutions({ uid }: { uid: string }) {
       <rect x="21" y="28" width="58" height="37" rx="3" fill="#f8fafc" />
       <circle cx="26" cy="24" r="1.5" fill="#ef4444" />
       <circle cx="31" cy="24" r="1.5" fill="#eab308" />
-      <circle cx="36" cy="24" r="1.5" fill="#22c55e" />
+      <circle cx="36" cy="24" r="1.5" fill="#8b5cf6" />
       <rect x="25" y="32" width="22" height="14" rx="2" fill={"url(#" + uid + "ts)"} opacity=".3" />
       <rect x="50" y="32" width="25" height="4" rx="2" fill="#94a3b8" />
       <rect x="50" y="39" width="20" height="3" rx="1.5" fill="#cbd5e1" />
@@ -1015,7 +1016,7 @@ function TechGrowth({ uid }: { uid: string }) {
       </defs>
       <ellipse cx="60" cy="84" rx="46" ry="5" fill="#000" opacity=".08" />
       <rect x="26" y="52" width="68" height="14" rx="3" fill="#1e293b" />
-      <circle cx="34" cy="59" r="2" fill="#22c55e" />
+      <circle cx="34" cy="59" r="2" fill="#8b5cf6" />
       <line x1="42" y1="59" x2="68" y2="59" stroke="#475569" strokeWidth="2" strokeLinecap="round" />
       <circle cx="86" cy="59" r="2" fill="#38bdf8" />
       <rect x="26" y="68" width="68" height="13" rx="3" fill="#0f172a" />

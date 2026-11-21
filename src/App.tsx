@@ -60,6 +60,7 @@ export default function App() {
         key="fuelplate"
         brand="surxtech"
         tagline="Custom digital solutions, modern web platforms, and mobile apps."
+        palette={{ accent: "#7c3aed", soft: "#ede9fe", ink: "#0f172a" }}
         nav={[
           { label: "About", href: "#about" },
           { label: "Service", href: "#service" },
