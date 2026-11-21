@@ -184,7 +184,7 @@ const DEFAULT_RECIPE: FptRecipe = {
 }
 
 const DEFAULT_CATEGORIES: FptCategory[] = [
-  { name: "Website Development", count: 48, image: { src: "/cat-webdev.jpg", alt: "Website Development", tone: "#f97316" } },
+  { name: "Website Development", count: 48, image: { src: "/cat-webdev.jpg", alt: "Website Development", tone: "#7c3aed" } },
   { name: "App Development", count: 35, image: { src: "/cat-appdev.jpg", alt: "App Development", tone: "#f97316" } },
   { name: "Business Applications", count: 24, image: { src: "/cat-webapp.jpg", alt: "Business Applications", tone: "#f97316" } },
   { name: "E-Commerce Stores", count: 26, image: { src: "/cat-ecommerce.jpg", alt: "E-Commerce Stores", tone: "#f97316" } },
@@ -1907,13 +1907,13 @@ export default function FuelplateRecipesTemplate({
   const t = testimonials
   const nutrientRows = [nutrients.slice(0, Math.ceil(nutrients.length / 2)), nutrients.slice(Math.ceil(nutrients.length / 2))]
   const dietCards = [
-    { tag: "web", label: "Website Dev", image: { src: "/cat-webdev.jpg", alt: "Website Development", tone: "#f97316" } },
+    { tag: "web", label: "Website Dev", image: { src: "/cat-webdev.jpg", alt: "Website Development", tone: "#7c3aed" } },
     { tag: "mobile", label: "App Dev", image: { src: "/cat-appdev.jpg", alt: "App Development", tone: "#f97316" } },
     { tag: "business", label: "Business Apps", image: { src: "/cat-webapp.jpg", alt: "Business Applications", tone: "#f97316" } },
     { tag: "crm", label: "CRM & ERP", image: { src: "/cat-crm.jpg", alt: "CRM & ERP Systems", tone: "#f97316" } },
   ]
   const orbitShots = [
-    { id: "o1", image: { src: "/cat-webdev.jpg", alt: "Website Development", tone: "#f97316" } },
+    { id: "o1", image: { src: "/cat-webdev.jpg", alt: "Website Development", tone: "#7c3aed" } },
     { id: "o2", image: { src: "/cat-appdev.jpg", alt: "App Development", tone: "#f97316" } },
     { id: "o3", image: { src: "/cat-ecommerce.jpg", alt: "E-Commerce", tone: "#f97316" } },
     { id: "o4", image: { src: "/cat-ai.jpg", alt: "AI & Neural Tech", tone: "#f97316" } },
@@ -1976,7 +1976,7 @@ export default function FuelplateRecipesTemplate({
           </div>
           {dishes[0] && (
             <div className="fpt-plate" aria-hidden="true">
-              <Pic shot={{ src: "/cat-webdev.jpg", alt: "Active Deployment", tone: "#f97316" }} w={420} h={200} eager />
+              <Pic shot={{ src: "/hero-deploy.jpg", alt: "Active Deployment", tone: "#7c3aed" }} w={420} h={200} eager />
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                 <b>{(dishes[0] || dishes[1]).name}</b>
               </div>
