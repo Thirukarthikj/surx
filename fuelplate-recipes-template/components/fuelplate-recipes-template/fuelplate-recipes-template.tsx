@@ -2179,15 +2179,53 @@ export default function FuelplateRecipesTemplate({
                 </figure>
               )}
 
-              {t[1] && (
-                <figure className="fpt-tile fpt-sage fpt-wide fpt-story">
-                  {t[1].image && <Pic shot={t[1].image} w={480} />}
-                  <div style={{ display: "grid", gap: 18 }}>
-                    <blockquote className="fpt-quote">&ldquo;{t[1].quote}&rdquo;</blockquote>
-                    <figcaption className="fpt-who"><span>{t[1].name}<small>{t[1].role}</small></span></figcaption>
+              <div className="fpt-tile fpt-wide fpt-story" style={{
+                background: "#ffffff",
+                border: "1px solid rgba(124, 58, 237, 0.15)",
+                boxShadow: "0 10px 30px -10px rgba(124, 58, 237, 0.08)",
+              }}>
+                <div style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  background: "linear-gradient(135deg, rgba(124, 58, 237, 0.06) 0%, rgba(168, 85, 247, 0.1) 100%)",
+                  borderRadius: 18,
+                  height: "100%",
+                  minHeight: 170,
+                  padding: 20,
+                  border: "1px solid rgba(124, 58, 237, 0.12)",
+                }}>
+                  <img src="/logo.png" alt="SURX Logo" style={{ width: 100, height: 100, objectFit: "contain", filter: "drop-shadow(0 8px 16px rgba(124, 58, 237, 0.2))" }} />
+                </div>
+                <div style={{ display: "grid", gap: 10 }}>
+                  <div style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 6,
+                    padding: "4px 10px",
+                    borderRadius: 99,
+                    background: "rgba(124, 58, 237, 0.08)",
+                    border: "1px solid rgba(124, 58, 237, 0.2)",
+                    color: "#7c3aed",
+                    fontSize: 11,
+                    fontWeight: 600,
+                    width: "fit-content",
+                  }}>
+                    ✦ Brand Philosophy
                   </div>
-                </figure>
-              )}
+                  <h3 style={{ fontSize: "clamp(20px, 2.5vw, 26px)", fontWeight: 700, margin: 0, color: "#111827", lineHeight: 1.25 }}>
+                    We Not Just Code, <span style={{ background: "linear-gradient(135deg, #7c3aed, #a855f7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>We Build Brands.</span>
+                  </h3>
+                  <p style={{ fontSize: 13.5, lineHeight: 1.6, color: "#4b5563", margin: 0 }}>
+                    Every line of code and user interface we craft is engineered to establish your market presence, build customer trust, and scale your brand identity into an industry powerhouse.
+                  </p>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 4 }}>
+                    <span style={{ fontSize: 11, fontWeight: 500, padding: "4px 10px", borderRadius: 99, background: "#f3f4f6", color: "#374151" }}>✦ Custom Brand Identity</span>
+                    <span style={{ fontSize: 11, fontWeight: 500, padding: "4px 10px", borderRadius: 99, background: "#f3f4f6", color: "#374151" }}>✦ Enterprise Architecture</span>
+                    <span style={{ fontSize: 11, fontWeight: 500, padding: "4px 10px", borderRadius: 99, background: "#f3f4f6", color: "#374151" }}>✦ Rapid Market Scale</span>
+                  </div>
+                </div>
+              </div>
 
               <div className="fpt-tile">
                 <div className="fpt-diets">
@@ -2279,11 +2317,9 @@ export default function FuelplateRecipesTemplate({
             position: "relative",
             overflow: "hidden",
             borderRadius: 32,
-            background: "linear-gradient(135deg, rgba(30, 18, 56, 0.75) 0%, rgba(15, 10, 30, 0.85) 100%)",
-            border: "1px solid rgba(168, 85, 247, 0.25)",
-            boxShadow: "0 25px 60px -15px rgba(124, 58, 237, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
-            backdropFilter: "blur(20px)",
-            WebkitBackdropFilter: "blur(20px)",
+            background: "#ffffff",
+            border: "1px solid rgba(124, 58, 237, 0.15)",
+            boxShadow: "0 25px 60px -15px rgba(124, 58, 237, 0.08), 0 0 0 1px rgba(124, 58, 237, 0.05)",
             padding: "clamp(36px, 5vw, 64px)",
           }}>
             {/* Ambient background glow */}
@@ -2294,7 +2330,7 @@ export default function FuelplateRecipesTemplate({
               width: "450px",
               height: "450px",
               borderRadius: "50%",
-              background: "radial-gradient(circle, rgba(168, 85, 247, 0.22) 0%, transparent 70%)",
+              background: "radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 70%)",
               filter: "blur(40px)",
               pointerEvents: "none",
             }} />
@@ -2305,7 +2341,7 @@ export default function FuelplateRecipesTemplate({
               width: "380px",
               height: "380px",
               borderRadius: "50%",
-              background: "radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, transparent 70%)",
+              background: "radial-gradient(circle, rgba(99, 102, 241, 0.06) 0%, transparent 70%)",
               filter: "blur(40px)",
               pointerEvents: "none",
             }} />
@@ -2326,9 +2362,9 @@ export default function FuelplateRecipesTemplate({
                   gap: 8,
                   padding: "6px 14px",
                   borderRadius: 999,
-                  background: "rgba(168, 85, 247, 0.15)",
-                  border: "1px solid rgba(168, 85, 247, 0.35)",
-                  color: "#d8b4fe",
+                  background: "rgba(124, 58, 237, 0.08)",
+                  border: "1px solid rgba(124, 58, 237, 0.2)",
+                  color: "#7c3aed",
                   fontSize: 12,
                   fontWeight: 600,
                   letterSpacing: "0.08em",
@@ -2344,15 +2380,14 @@ export default function FuelplateRecipesTemplate({
                   fontWeight: 700,
                   lineHeight: 1.15,
                   letterSpacing: "-0.025em",
-                  color: "#ffffff",
+                  color: "#111827",
                   margin: 0,
                 }}>
                   We Not Just Code, <br />
                   <span style={{
-                    background: "linear-gradient(135deg, #c084fc 0%, #a855f7 50%, #60a5fa 100%)",
+                    background: "linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #4f46e5 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
-                    textShadow: "0 0 30px rgba(168, 85, 247, 0.4)",
                   }}>
                     We Build Brands.
                   </span>
@@ -2361,7 +2396,7 @@ export default function FuelplateRecipesTemplate({
                 <p style={{
                   fontSize: "clamp(15px, 1.2vw, 17px)",
                   lineHeight: 1.65,
-                  color: "rgba(255, 255, 255, 0.75)",
+                  color: "#4b5563",
                   margin: 0,
                   maxWidth: "520px",
                 }}>
@@ -2374,10 +2409,10 @@ export default function FuelplateRecipesTemplate({
                     <span key={tag} style={{
                       padding: "6px 12px",
                       borderRadius: 99,
-                      background: "rgba(255, 255, 255, 0.05)",
-                      border: "1px solid rgba(255, 255, 255, 0.12)",
+                      background: "#f9fafb",
+                      border: "1px solid #e5e7eb",
                       fontSize: 12,
-                      color: "rgba(255, 255, 255, 0.85)",
+                      color: "#374151",
                       fontWeight: 500,
                     }}>
                       ✦ {tag}
@@ -2411,18 +2446,19 @@ export default function FuelplateRecipesTemplate({
                   <div key={card.num} style={{
                     padding: "20px 24px",
                     borderRadius: 20,
-                    background: "rgba(255, 255, 255, 0.04)",
-                    border: "1px solid rgba(255, 255, 255, 0.08)",
+                    background: "#ffffff",
+                    border: "1px solid rgba(124, 58, 237, 0.12)",
+                    boxShadow: "0 4px 20px -4px rgba(124, 58, 237, 0.06)",
                     transition: "all 0.3s ease",
                     display: "grid",
                     gap: 6,
                   }}>
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 4 }}>
-                      <span style={{ fontSize: 13, fontWeight: 700, color: "#a855f7", letterSpacing: "0.05em" }}>{card.num}</span>
-                      <span style={{ fontSize: 10.5, fontWeight: 600, padding: "2px 8px", borderRadius: 99, background: "rgba(168, 85, 247, 0.15)", color: "#c084fc" }}>{card.tag}</span>
+                      <span style={{ fontSize: 13, fontWeight: 700, color: "#7c3aed", letterSpacing: "0.05em" }}>{card.num}</span>
+                      <span style={{ fontSize: 10.5, fontWeight: 600, padding: "2px 8px", borderRadius: 99, background: "rgba(124, 58, 237, 0.08)", color: "#7c3aed" }}>{card.tag}</span>
                     </div>
-                    <b style={{ fontSize: 16, fontWeight: 600, color: "#ffffff" }}>{card.title}</b>
-                    <p style={{ fontSize: 13, lineHeight: 1.5, color: "rgba(255, 255, 255, 0.65)", margin: 0 }}>{card.desc}</p>
+                    <b style={{ fontSize: 16, fontWeight: 600, color: "#111827" }}>{card.title}</b>
+                    <p style={{ fontSize: 13, lineHeight: 1.5, color: "#4b5563", margin: 0 }}>{card.desc}</p>
                   </div>
                 ))}
               </div>
