@@ -145,13 +145,13 @@ const U = "https://images.unsplash.com/photo-"
 const shot = (id: string, alt: string, tone: string, focus?: string): FptShot => ({ src: U + id, alt, tone, focus })
 
 const DEFAULT_DISHES: FptDish[] = [
-  { id: "webdev", name: "Web Development", image: { src: "/website-development.jpg", alt: "Website Development - Modern Websites for Modern Brands", tone: "#f97316" }, time: 14, kcal: 99, protein: 100, carbs: 95, fat: 98, course: "Frontend & Fullstack", tags: ["web", "high-performance", "responsive", "seo-optimized"] },
-  { id: "appdev", name: "Mobile App Development", image: shot("1551650975-87deedd944c3", "Android and iOS mobile smartphone application interface", "#0284c7"), time: 21, kcal: 99, protein: 98, carbs: 90, fat: 96, course: "iOS & Android", tags: ["mobile", "native", "cross-platform", "flutter-react"] },
-  { id: "webapp", name: "Web Applications (SaaS)", image: shot("1551288049-bebda4e38f71", "Interactive cloud web application dashboard and analytics", "#3b82f6"), time: 30, kcal: 99, protein: 100, carbs: 96, fat: 99, course: "Enterprise Cloud", tags: ["web", "custom", "scalable", "secure"] },
+  { id: "webdev", name: "Website Development", image: { src: "/website-development.jpg", alt: "Website Development - Modern Websites for Modern Brands", tone: "#f97316" }, time: 14, kcal: 99, protein: 100, carbs: 95, fat: 98, course: "Frontend & Fullstack", tags: ["web", "high-performance", "responsive", "seo-optimized"] },
+  { id: "appdev", name: "App Development", image: { src: "/app-development.jpg", alt: "App Development - Native iOS & Android Solutions", tone: "#f97316" }, time: 21, kcal: 99, protein: 98, carbs: 90, fat: 96, course: "iOS & Android", tags: ["mobile", "native", "cross-platform", "flutter-react"] },
+  { id: "webapp", name: "Business Applications", image: { src: "/business-application.jpg", alt: "Business Applications - Enterprise Web Apps & SaaS Platforms", tone: "#f97316" }, time: 30, kcal: 99, protein: 100, carbs: 96, fat: 99, course: "Enterprise Cloud", tags: ["web", "custom", "scalable", "secure"] },
+  { id: "ecommerce", name: "E-Commerce Website", image: { src: "/ecommerce-website.jpg", alt: "E-Commerce Website - High-Converting Digital Stores", tone: "#f97316" }, time: 14, kcal: 99, protein: 96, carbs: 94, fat: 98, course: "Digital Commerce", tags: ["web", "custom", "payments", "high-conversion"] },
+  { id: "custom", name: "CRM & ERP Systems", image: { src: "/crm-systems.jpg", alt: "CRM & ERP Systems - Centralized Customer & Workflow Engine", tone: "#f97316" }, time: 28, kcal: 99, protein: 100, carbs: 98, fat: 100, course: "Workflow Systems", tags: ["custom", "cloud", "tailored", "microservices"] },
   { id: "uiux", name: "UI/UX Product Design", image: shot("1581291518857-4e27b48ff24e", "User interface wireframes, prototyping and design system", "#4f46e5"), time: 10, kcal: 100, protein: 95, carbs: 98, fat: 92, course: "Design Systems", tags: ["web", "mobile", "figma", "user-research"] },
   { id: "cloud", name: "Cloud Solutions & DevOps", image: shot("1451187580459-43490279c0fa", "Global connected cloud network infrastructure and servers", "#0f172a"), time: 7, kcal: 99, protein: 99, carbs: 99, fat: 99, course: "Infrastructure", tags: ["cloud", "aws", "docker", "ci-cd-pipelines"] },
-  { id: "ecommerce", name: "E-Commerce Solutions", image: shot("1472851294608-062f824d29cc", "Digital shopping and e-commerce storefront", "#059669"), time: 14, kcal: 99, protein: 96, carbs: 94, fat: 98, course: "Digital Commerce", tags: ["web", "custom", "payments", "high-conversion"] },
-  { id: "custom", name: "Custom Software Engineering", image: shot("1555066931-4365d14bab8c", "High performance custom software engineering and architecture", "#1e293b"), time: 28, kcal: 99, protein: 100, carbs: 98, fat: 100, course: "Custom Solutions", tags: ["custom", "cloud", "tailored", "microservices"] },
   { id: "ai", name: "AI & Machine Learning", image: shot("1677442136019-21780ecad995", "Artificial intelligence neural networks and intelligent automation", "#7c3aed"), time: 21, kcal: 98, protein: 99, carbs: 97, fat: 95, course: "Intelligent Systems", tags: ["cloud", "custom", "automation", "predictive-ai"] },
   { id: "cyber", name: "Cybersecurity & Protection", image: shot("1563986768609-322da13575f3", "Data security encryption and infrastructure protection", "#064e3b"), time: 7, kcal: 99, protein: 100, carbs: 100, fat: 100, course: "Security & Audits", tags: ["cloud", "custom", "penetration-testing", "compliance"] },
   { id: "api", name: "API & Backend Architecture", image: shot("1544197150-b99a580bb7a8", "High throughput server database and API architecture", "#334155"), time: 14, kcal: 99, protein: 98, carbs: 99, fat: 97, course: "Backend Systems", tags: ["cloud", "web", "graphql-rest", "high-concurrency"] },
@@ -167,7 +167,7 @@ const DEFAULT_TESTIMONIALS: FptTestimonial[] = [
 
 const DEFAULT_RECIPE: FptRecipe = {
   name: "Cloud Web Application Architecture",
-  image: shot("1551288049-bebda4e38f71", "Modern cloud web application dashboard", "#3b82f6"),
+  image: { src: "/business-application.jpg", alt: "Business Applications & Cloud Architecture", tone: "#f97316" },
   time: 14,
   kcal: 100,
   servings: 1,
@@ -188,14 +188,14 @@ const DEFAULT_RECIPE: FptRecipe = {
 }
 
 const DEFAULT_CATEGORIES: FptCategory[] = [
-  { name: "Web Development", count: 48, image: { src: "/website-development.jpg", alt: "Web Development", tone: "#f97316" } },
-  { name: "Mobile Apps", count: 35, image: shot("1551650975-87deedd944c3", "Mobile Apps", "#0284c7") },
+  { name: "Website Development", count: 48, image: { src: "/website-development.jpg", alt: "Website Development", tone: "#f97316" } },
+  { name: "App Development", count: 35, image: { src: "/app-development.jpg", alt: "App Development", tone: "#f97316" } },
+  { name: "Business Applications", count: 24, image: { src: "/business-application.jpg", alt: "Business Applications", tone: "#f97316" } },
+  { name: "E-Commerce Stores", count: 26, image: { src: "/ecommerce-website.jpg", alt: "E-Commerce Stores", tone: "#f97316" } },
+  { name: "CRM & ERP Systems", count: 31, image: { src: "/crm-systems.jpg", alt: "CRM & ERP Systems", tone: "#f97316" } },
   { name: "Cloud & DevOps", count: 29, image: shot("1451187580459-43490279c0fa", "Cloud Infrastructure", "#0f172a") },
   { name: "UI/UX Design", count: 42, image: shot("1581291518857-4e27b48ff24e", "UI/UX Design", "#4f46e5") },
-  { name: "SaaS Platforms", count: 24, image: shot("1551288049-bebda4e38f71", "SaaS Web Applications", "#3b82f6") },
   { name: "Cybersecurity", count: 18, image: shot("1563986768609-322da13575f3", "Cybersecurity", "#064e3b") },
-  { name: "AI Automation", count: 31, image: shot("1677442136019-21780ecad995", "Artificial Intelligence", "#7c3aed") },
-  { name: "E-Commerce", count: 26, image: shot("1472851294608-062f824d29cc", "E-Commerce", "#059669") },
   { name: "API & Backend", count: 37, image: shot("1544197150-b99a580bb7a8", "API & Database", "#334155") },
 ]
 
@@ -1944,12 +1944,11 @@ export default function FuelplateRecipesTemplate({
   const t = testimonials
   const nutrientRows = [nutrients.slice(0, Math.ceil(nutrients.length / 2)), nutrients.slice(Math.ceil(nutrients.length / 2))]
   const dietCards = [
-    { tag: "web", label: "Web & SaaS", image: { src: "/website-development.jpg", alt: "Web and SaaS platform development", tone: "#f97316" } },
-    { tag: "mobile", label: "Mobile Apps", image: shot("1551650975-87deedd944c3", "iOS and Android mobile app interface", "#0284c7") },
-    { tag: "cloud", label: "Cloud & DevOps", image: shot("1451187580459-43490279c0fa", "Global cloud server network infrastructure", "#0f172a") },
-    { tag: "custom", label: "Enterprise", image: shot("1551288049-bebda4e38f71", "Enterprise custom software engineering", "#3b82f6") },
+    { tag: "web", label: "Website Dev", image: { src: "/website-development.jpg", alt: "Website Development", tone: "#f97316" } },
+    { tag: "mobile", label: "App Dev", image: { src: "/app-development.jpg", alt: "App Development", tone: "#f97316" } },
+    { tag: "business", label: "Business Apps", image: { src: "/business-application.jpg", alt: "Business Applications", tone: "#f97316" } },
+    { tag: "crm", label: "CRM & ERP", image: { src: "/crm-systems.jpg", alt: "CRM & ERP Systems", tone: "#f97316" } },
   ]
-  const filterChips = [["protein", "High protein"], ["quick", "Under 20 min"], ["lowcarb", "Low carb"], ["plant", "Vegetarian"]]
   const orbitShots = [dishes[0], dishes[4], dishes[3], dishes[9] || dishes[1]].filter(Boolean)
   const orbitPlaces: { size: number; at: React.CSSProperties }[] = [
     { size: 120, at: { left: "6%", top: "18%" } },
