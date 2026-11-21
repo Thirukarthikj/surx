@@ -1922,7 +1922,7 @@ export default function FuelplateRecipesTemplate({
           const words = ctaEl.querySelectorAll(".fpt-wi")
           gsap.fromTo(words, { "--fpt-lit": "18%" }, { "--fpt-lit": "100%", ease: "none", stagger: 0.3, scrollTrigger: { trigger: ctaEl, start: "top 75%", end: "center 45%", scrub: 0.5 } })
           gsap.utils.toArray(".fpt-orbit").forEach((o, i) => {
-            gsap.fromTo(o as HTMLElement, { yPercent: 60 + i * 30, rotate: -40 + i * 25 }, { yPercent: -60 - i * 30, rotate: 40 - i * 20, ease: "none", scrollTrigger: { trigger: ctaEl, start: "top bottom", end: "bottom top", scrub: 1 } })
+            gsap.fromTo(o as HTMLElement, { yPercent: 40 + i * 15 }, { yPercent: -40 - i * 15, ease: "none", scrollTrigger: { trigger: ctaEl, start: "top bottom", end: "bottom top", scrub: 1 } })
           })
         }
 
@@ -1959,7 +1959,12 @@ export default function FuelplateRecipesTemplate({
     { tag: "business", label: "Business Apps", image: { src: "/cat-webapp.jpg", alt: "Business Applications", tone: "#f97316" } },
     { tag: "crm", label: "CRM & ERP", image: { src: "/cat-crm.jpg", alt: "CRM & ERP Systems", tone: "#f97316" } },
   ]
-  const orbitShots = [dishes[0], dishes[4], dishes[3], dishes[9] || dishes[1]].filter(Boolean)
+  const orbitShots = [
+    { id: "o1", image: { src: "/cat-webdev.jpg", alt: "Website Development", tone: "#f97316" } },
+    { id: "o2", image: { src: "/cat-appdev.jpg", alt: "App Development", tone: "#f97316" } },
+    { id: "o3", image: { src: "/cat-ecommerce.jpg", alt: "E-Commerce", tone: "#f97316" } },
+    { id: "o4", image: { src: "/cat-ai.jpg", alt: "AI & Neural Tech", tone: "#f97316" } },
+  ]
   const orbitPlaces: { size: number; at: React.CSSProperties }[] = [
     { size: 120, at: { left: "6%", top: "18%" } },
     { size: 96, at: { right: "7%", top: "10%" } },
@@ -2018,7 +2023,7 @@ export default function FuelplateRecipesTemplate({
           </div>
           {dishes[0] && (
             <div className="fpt-plate" aria-hidden="true">
-              <Pic shot={(dishes[0] || dishes[1]).image} w={420} h={200} eager />
+              <Pic shot={{ src: "/cat-webdev.jpg", alt: "Active Deployment", tone: "#f97316" }} w={420} h={200} eager />
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                 <b>{(dishes[0] || dishes[1]).name}</b>
               </div>
