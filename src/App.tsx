@@ -44,7 +44,7 @@ export default function App() {
           text: "From bespoke web and mobile apps to scalable cloud engineering, we build modern technology solutions that drive business growth.",
           cta: "Get In Touch",
           image: {
-            src: "/hero.jpg",
+            src: "/hero.jpg?v=2",
             alt: "Futuristic high-definition circuit board schematic",
             tone: "#e5e7eb",
             focus: "50% 50%",
