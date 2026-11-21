@@ -184,14 +184,14 @@ const DEFAULT_RECIPE: FptRecipe = {
 }
 
 const DEFAULT_CATEGORIES: FptCategory[] = [
-  { name: "Website Development", count: 48, image: { src: "/website-development.jpg", alt: "Website Development", tone: "#f97316" } },
-  { name: "App Development", count: 35, image: { src: "/app-development.jpg", alt: "App Development", tone: "#f97316" } },
-  { name: "Business Applications", count: 24, image: { src: "/business-application.jpg", alt: "Business Applications", tone: "#f97316" } },
-  { name: "E-Commerce Stores", count: 26, image: { src: "/ecommerce-website.jpg", alt: "E-Commerce Stores", tone: "#f97316" } },
-  { name: "CRM & ERP Systems", count: 31, image: { src: "/crm-systems.jpg", alt: "CRM & ERP Systems", tone: "#f97316" } },
-  { name: "UI/UX Product Design", count: 42, image: { src: "/ui-ux-design.jpg", alt: "UI/UX Design", tone: "#f97316" } },
-  { name: "Cloud & DevOps", count: 29, image: { src: "/cloud-devops.jpg", alt: "Cloud Infrastructure", tone: "#f97316" } },
-  { name: "AI & Machine Learning", count: 31, image: { src: "/ai-machine-learning.jpg", alt: "Artificial Intelligence", tone: "#f97316" } },
+  { name: "Website Development", count: 48, image: { src: "/cat-webdev.jpg", alt: "Website Development", tone: "#f97316" } },
+  { name: "App Development", count: 35, image: { src: "/cat-appdev.jpg", alt: "App Development", tone: "#f97316" } },
+  { name: "Business Applications", count: 24, image: { src: "/cat-webapp.jpg", alt: "Business Applications", tone: "#f97316" } },
+  { name: "E-Commerce Stores", count: 26, image: { src: "/cat-ecommerce.jpg", alt: "E-Commerce Stores", tone: "#f97316" } },
+  { name: "CRM & ERP Systems", count: 31, image: { src: "/cat-crm.jpg", alt: "CRM & ERP Systems", tone: "#f97316" } },
+  { name: "UI/UX Product Design", count: 42, image: { src: "/cat-uiux.jpg", alt: "UI/UX Design", tone: "#f97316" } },
+  { name: "Cloud & DevOps", count: 29, image: { src: "/cat-cloud.jpg", alt: "Cloud Infrastructure", tone: "#f97316" } },
+  { name: "AI & Machine Learning", count: 31, image: { src: "/cat-ai.jpg", alt: "Artificial Intelligence", tone: "#f97316" } },
 ]
 
 const DEFAULT_ARTICLES: FptArticle[] = [
@@ -252,12 +252,14 @@ const DEFAULT_FOOTER = {
   columns: [
     { title: "Services", links: [{ label: "Web Development" }, { label: "Mobile Apps" }, { label: "Cloud & DevOps" }, { label: "UI/UX Design" }, { label: "Cybersecurity" }, { label: "Custom Software" }] },
     { title: "Platforms", links: [{ label: "Web & SaaS" }, { label: "iOS & Android" }, { label: "AWS & Docker" }, { label: "AI & Machine Learning" }] },
-    { title: "Contact", links: [
-      { label: "+91 93425 53805", href: "tel:9342553805" },
-      { label: "surxtech@gmail.com", href: "mailto:surxtech@gmail.com" },
-      { label: "Nilakottai, Dindigul", href: "#contact" },
-      { label: "Start a Project", href: "#contact" },
-    ] },
+    {
+      title: "Contact", links: [
+        { label: "+91 93425 53805", href: "tel:9342553805" },
+        { label: "surxtech@gmail.com", href: "mailto:surxtech@gmail.com" },
+        { label: "Nilakottai, Dindigul", href: "#contact" },
+        { label: "Start a Project", href: "#contact" },
+      ]
+    },
     { title: "Company", links: [{ label: "About Us" }, { label: "Privacy Policy" }, { label: "Terms of Service" }] },
   ],
   social: [{ label: "LinkedIn" }, { label: "GitHub" }, { label: "Twitter / X" }],
@@ -683,8 +685,8 @@ const FPT_CSS = `
 .fpt-cat{position:relative;flex:0 0 calc((100% - 48px) / 5);aspect-ratio:1 / 1.02;border-radius:20px;background:var(--fpt-surface);display:grid;place-items:center;overflow:hidden;transition:background .35s}
 .fpt-cat:hover{background:var(--fpt-sage)}
 .fpt-cat-spin{display:grid;place-items:center;width:62%;aspect-ratio:1}
-.fpt-cat .fpt-pic{width:100%;aspect-ratio:1;border-radius:50%;box-shadow:0 18px 30px -16px rgba(40,30,10,.6),inset 0 0 0 4px rgba(255,255,255,.9);transition:transform .7s cubic-bezier(.2,.8,.2,1)}
-.fpt-cat:hover .fpt-pic{transform:rotate(28deg) scale(1.07) translateY(-6px)}
+.fpt-cat .fpt-pic{width:100%;aspect-ratio:1;border-radius:50%;box-shadow:0 18px 30px -16px rgba(40,30,10,.6),inset 0 0 0 4px rgba(255,255,255,.9);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.fpt-cat:hover .fpt-pic{transform:scale(1.08) translateY(-4px)}
 .fpt-cat-l{position:absolute;left:12px;right:12px;bottom:10px;display:flex;justify-content:space-between;align-items:center;font-size:12px}
 .fpt-cat-l small{font-size:10.5px;color:var(--fpt-muted);opacity:0;transform:translateX(-6px);transition:opacity .3s,transform .3s}
 .fpt-cat:hover .fpt-cat-l small,.fpt-cat:focus-visible .fpt-cat-l small{opacity:1;transform:none}
@@ -1352,7 +1354,7 @@ function Showcase({ dishes, saved, onSave, uid }: { dishes: FptDish[]; saved: st
     const dx = e.clientX - s.drag.x
     if (Math.abs(dx) > 5 && !s.drag.moved) {
       s.drag.moved = true
-      ;(e.currentTarget as HTMLElement).setPointerCapture(e.pointerId)
+        ; (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId)
     }
     if (!s.drag.moved) return
     const now = performance.now()
@@ -1894,9 +1896,9 @@ export default function FuelplateRecipesTemplate({
         gsap.from(".fpt-cook-phone .fpt-phone", { x: -60, rotate: -8, autoAlpha: 0, duration: 1.3, ease: "expo.out", scrollTrigger: { trigger: ".fpt-cook", start: "top 80%" } })
         gsap.from(".fpt-cook > .fpt-tile:not(.fpt-cook-phone)", { x: 60, autoAlpha: 0, duration: 1.2, ease: "expo.out", stagger: 0.1, scrollTrigger: { trigger: ".fpt-cook", start: "top 80%" } })
 
-        // categories: plates spin onto their tiles
-        gsap.from(".fpt-cat", { y: 40, autoAlpha: 0, duration: 0.9, ease: "expo.out", stagger: 0.06, scrollTrigger: { trigger: ".fpt-cats", start: "top 85%" } })
-        gsap.from(".fpt-cat-spin", { rotate: -160, scale: 0.4, duration: 1.5, ease: "expo.out", stagger: 0.06, scrollTrigger: { trigger: ".fpt-cats", start: "top 85%" } })
+        // categories: clean scale & fade onto their tiles
+        gsap.from(".fpt-cat", { y: 30, autoAlpha: 0, duration: 0.9, ease: "expo.out", stagger: 0.05, scrollTrigger: { trigger: ".fpt-cats", start: "top 85%" } })
+        gsap.from(".fpt-cat-spin", { scale: 0.7, autoAlpha: 0, duration: 1.1, ease: "expo.out", stagger: 0.05, scrollTrigger: { trigger: ".fpt-cats", start: "top 85%" } })
 
         // resources slide in
         gsap.from(".fpt-kind", { y: 30, autoAlpha: 0, duration: 0.9, ease: "expo.out", stagger: 0.08, scrollTrigger: { trigger: ".fpt-kinds", start: "top 92%" } })
@@ -1921,7 +1923,7 @@ export default function FuelplateRecipesTemplate({
     }, root)
 
     // fonts and late images change heights; let the triggers re-measure
-    if (document.fonts) document.fonts.ready.then(() => ScrollTrigger.refresh()).catch(() => {})
+    if (document.fonts) document.fonts.ready.then(() => ScrollTrigger.refresh()).catch(() => { })
     const late = window.setTimeout(() => ScrollTrigger.refresh(), 1200)
     return () => {
       window.clearTimeout(late)
@@ -1939,10 +1941,10 @@ export default function FuelplateRecipesTemplate({
   const t = testimonials
   const nutrientRows = [nutrients.slice(0, Math.ceil(nutrients.length / 2)), nutrients.slice(Math.ceil(nutrients.length / 2))]
   const dietCards = [
-    { tag: "web", label: "Website Dev", image: { src: "/website-development.jpg", alt: "Website Development", tone: "#f97316" } },
-    { tag: "mobile", label: "App Dev", image: { src: "/app-development.jpg", alt: "App Development", tone: "#f97316" } },
-    { tag: "business", label: "Business Apps", image: { src: "/business-application.jpg", alt: "Business Applications", tone: "#f97316" } },
-    { tag: "crm", label: "CRM & ERP", image: { src: "/crm-systems.jpg", alt: "CRM & ERP Systems", tone: "#f97316" } },
+    { tag: "web", label: "Website Dev", image: { src: "/cat-webdev.jpg", alt: "Website Development", tone: "#f97316" } },
+    { tag: "mobile", label: "App Dev", image: { src: "/cat-appdev.jpg", alt: "App Development", tone: "#f97316" } },
+    { tag: "business", label: "Business Apps", image: { src: "/cat-webapp.jpg", alt: "Business Applications", tone: "#f97316" } },
+    { tag: "crm", label: "CRM & ERP", image: { src: "/cat-crm.jpg", alt: "CRM & ERP Systems", tone: "#f97316" } },
   ]
   const orbitShots = [dishes[0], dishes[4], dishes[3], dishes[9] || dishes[1]].filter(Boolean)
   const orbitPlaces: { size: number; at: React.CSSProperties }[] = [
